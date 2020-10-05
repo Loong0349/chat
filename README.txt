@@ -1,0 +1,1 @@
+I am trying to combine what i have learnt on the previous projects. I am trying to craete a real-time chat application with login authorization. If possible i will try to save the chat history in a database.

@@ -1,0 +1,35 @@
+<div class="container-fluid vh-100 p-0">
+
+  <div class="jumbotron jumbotron-fluid text-center pt-4 pb-1">
+    <div class="container">
+      <h1 class="display-3">CHAT ROOM</h1>
+      <p class="lead">Welcome to ChatRoom </p>
+    </div>
+  </div>
+  
+  <div class="container rounded bg-secondary h-75 py-5 px-5">
+   
+    <div class="container rounded-lg bg-light py-4 px-4">
+      <form (submit)="join()">
+        <div class="form-group" style="font-size:120%;">
+          <label for="roomName">Room Name</label>
+          <input type="email" class="form-control" name="roomName" [(ngModel)]="room.roomname">
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Join/ Create</button>
+        </div>
+      </form>
+    </div>
+  
+  <div class="container px-5">
+  <div class="mt-5 alert alert-light text-center"><b>Rooms That You Have Joined</b> </div>
+  </div>
+  <div class="container w-75 mt-3 py-3 px-5 h-50 bg-light overflow-auto border border-dark rounded">
+    <tr *ngFor="let room of availableRooms">
+      <td>{{room.roomname}}</td>
+    </tr>
+    </div>
+  
+</div>
+  
+</div>

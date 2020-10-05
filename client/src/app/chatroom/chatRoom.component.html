@@ -1,0 +1,57 @@
+<div class="container-fluid vh-100 p-0">
+
+  <div class="jumbotron jumbotron-fluid text-center pt-5 pb-3 m-0">
+    <div class="container">
+      <h1 class="display-6">{{room}}</h1>
+    </div>
+  </div>
+  
+    <div class="container-fluid h-75 bg-light">
+      <div class="row h-100">
+        <div class="col-3 pt-5 h-75">
+
+            <div class="alert alert-dark m-0" role="alert">
+                Users in Room
+            </div>
+            <div class="container overflow-auto h-75 p-0 rounded border border-dark">
+              <tr *ngFor="let user of usersInRoom">
+                <td>{{user.username}}</td>
+              </tr>
+            </div>
+      
+      <div class="text-center mt-5 mr-4">
+        <button type="button" class="btn btn-secondary" (click)="leaveRoom()">Leave Room</button>
+      </div>
+      
+        </div>
+        <div class="col-9 h-100">
+          <div class="container p-5 h-100 overflow-auto">
+            <div class="container overflow-auto h-75 p-0 rounded border border-dark">
+              <table *ngFor="let msg of message">
+                <tr>{{msg.username}}  {{msg.time}}</tr>
+                <tr>{{msg.text}}</tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container-fluid fixed-bottom pt-4 pb-3 bg-secondary">
+      <form (submit)="sendMessage()">
+        <div class="row">
+          <div class="col-2">
+          </div>
+          <div class="col-8">
+            <div class="form-group">
+              <input class="form-control" type="text" name="messgage" [(ngModel)]="msg">
+            </div>
+          </div>
+          <div class="col-2">
+            <button type="submit" class="btn btn-primary px-4">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+  </div>

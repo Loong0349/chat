@@ -1,0 +1,68 @@
+<div class="container-fluid vh-100 p-0">
+
+<div class="jumbotron jumbotron-fluid text-center pt-5 pb-1">
+  <div class="container">
+    <h1 class="display-3">CHAT ROOM</h1>
+    <p class="lead">Welcome to ChatRoom </p>
+  </div>
+</div>
+
+<div class="container">
+  <ul class="nav nav-tabs" id="myTab" role="tablist" style="font-size:120%;">
+  <li class="nav-item" role="presentation">
+    <a (click)="reset()" class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Log In</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a (click)="reset()" class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+  </li>
+</ul>
+
+<div class="container px-5" *ngIf="errors.text">
+	<div class="alert alert-danger mt-4 text-center" role="alert" id="alert">
+		{{ errors.text }}
+	</div>
+  </div>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+    <div class="container">
+	  <form class="p-3 mt-4" style="font-size:120%;" (submit)="logIn()">
+		<div class="form-group mt-2">
+		  <label for="Username">Username</label>
+		  <input type="Username" class="form-control" id="username" name="username" (focus)="errors.text = null" [(ngModel)]="credentials.username">
+		</div>
+		<div class="form-group mt-2">
+		  <label for="password">Password</label>
+		  <input type="password" class="form-control" name="password" (focus)="errors.text = null" [(ngModel)]="credentials.password">
+		</div>
+		<div class="text-center">
+		  <button type="submit" class="btn btn-primary mt-2 px-4 py-2" (click)="credentials.type='login'">Log In</button>
+		</div>
+	</form>
+	</div>
+  </div>
+  <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+    <div class="container">
+	  <form class="p-3 mt-4" style="font-size:120%;" (submit)="register()">
+		<div class="form-group mt-2">
+		  <label for="Username">Username</label>
+		  <input type="Username" class="form-control" id="username" name="username" (focus)="errors.text = null" [(ngModel)]="credentials.username">
+		</div>
+		<div class="form-group mt-2">
+		  <label for="password">Password</label>
+		  <input type="password" class="form-control" name="password" (focus)="errors.text = null" [(ngModel)]="credentials.password">
+		</div>
+		<div class="form-group mt-2">
+		  <label for="confirmPassword">Confirm Password</label>
+		  <input type="password" class="form-control" name="confirmpassword" (focus)="errors.text = null" [(ngModel)]="credentials.confirmpassword">
+		</div>
+		<div class="text-center">
+		  <button type="submit" class="btn btn-primary mt-2 px-4 py-2" (click)="credentials.type='register'">Register</button>
+		</div>
+	</form>
+	</div>
+  </div>
+</div>
+</div>
+
+</div>
